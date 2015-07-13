@@ -275,6 +275,7 @@ var themes = {
 };
 
 var zingchart = require('zingchart');
+var React = require('react');
 
 var Core = React.createClass({displayName: "Core",
     render : function(){

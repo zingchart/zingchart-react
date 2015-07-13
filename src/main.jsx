@@ -1,4 +1,5 @@
 var zingchart = require('zingchart');
+var React = require('react');
 
 var Core = React.createClass({
     render : function(){
