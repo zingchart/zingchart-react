@@ -1,0 +1,28 @@
+{
+  "name": "ZingChart-React",
+  "version": "1.0.0",
+  "description": "React components to generate interactive javascript charts using the ZingChart library",
+  "main": "dist/zingchart-react.min.js",
+  "author": "ZingChart",
+  "homepage": "www.zingchart.com",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "react-component",
+    "chart",
+    "charts",
+    "graph",
+    "javascript",
+    "zingchart"
+  ],
+  "dependencies": {
+    "react": "~0.13",
+    "zingchart": ">=2.1.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-react": "^3.0.1",
+    "gulp-uglify": "^1.2.0"
+  }
+}
