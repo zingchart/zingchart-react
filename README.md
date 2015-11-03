@@ -6,6 +6,8 @@ Quickly create dynamic JavaScript charts that react when your data changes by ut
 
 More information : http://www.zingchart.com/blog/2015/06/12/zingchart-component-for-react/
 
+Want to see the application running? See our boilerplate repo : https://github.com/zingchart/ZingChart-React-Boilerplate
+
 ## Quick Start
 
 ### Install
