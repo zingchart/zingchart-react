@@ -2,7 +2,7 @@
 
 *A React Component for ZingChart*
 
-Quickly create dynamic JavaScript charts that react when your data changes by utilizing the ZingChart library and Facebook's React together. 
+Quickly create dynamic JavaScript charts that react when your data changes by utilizing the ZingChart library and Facebook's React together.
 
 More information : http://www.zingchart.com/blog/2015/06/12/zingchart-component-for-react/
 
@@ -15,11 +15,11 @@ npm install zingchart-react
 
 ### Usage
 
-This component is dependent upon React and the ZingChart library. The module uses the CommonJS specification and can be included in your application with bundling tools such as browserify and webpack. For more information. 
+This component is dependent upon React and the ZingChart library. The module uses the CommonJS specification and can be included in your application with bundling tools such as browserify and webpack. For more information.
 
 ---
 
-The ZingChart-React Component exposes 2 types of components. 
+The ZingChart-React Component exposes 2 types of components.
 
 * The first type allows for full utilization of the library with any chart type.
 	* `Core`
@@ -53,7 +53,7 @@ element for ZingChart to mount to, the optional height and width, and a ZingChar
 //JavaScript
 var ZingChart = require('zingchart-react').core;
 var myConfig = {
- 	type: "bar", 
+ 	type: "bar",
 	series : [
 		{
 			values : [35,42,67,89,25,34,67,85]
@@ -61,7 +61,7 @@ var myConfig = {
 	]
 };
 React.render(
-	<ZingChart id="myChart" height="300" width="600" data={myConfig} />, 
+	<ZingChart id="myChart" height="300" width="600" data={myConfig} />,
 	document.getElementById('myContainer')
 );
 ```
@@ -83,21 +83,9 @@ Create charts by simply inserting values directly into a component. Each series 
 
 **legend** [boolean] `(optional)` `default : false`
 
-**title** [string] `(optional)` `default : '' ` 
+**title** [string] `(optional)` `default : '' `
 
-**theme** [string] `(optional)` `default : none` 
-
-* `light`
-
-![ScreenShot](https://github.com/zingchart/ZingChart-React/blob/assets/assets/light.png)
-
-* `dark`
-
-![ScreenShot](https://github.com/zingchart/ZingChart-React/blob/assets/assets/dark.png)
-
-* `slate`
-
-![ScreenShot](https://github.com/zingchart/ZingChart-React/blob/assets/assets/slate.png)
+**theme** [string] `(optional)` `default : light`
 
 
 #### Line, Area, Bar
@@ -141,15 +129,15 @@ var myAreaValues = [
 ];
 
 React.render(
-<LineChart id="chart1" height="300" width="600" series={myLineValues} legend="true" theme="light" title="Hello Line Chart"/>, 
+<LineChart id="chart1" height="300" width="600" series={myLineValues} legend="true" theme="light" title="Hello Line Chart"/>,
 document.getElementById('component1'));
 
 React.render(
-<BarChart id="chart2" height="300" width="600" series={myBarValues} legend="true" theme="dark" title="Hello Bar Chart"/>, 
+<BarChart id="chart2" height="300" width="600" series={myBarValues} legend="true" theme="dark" title="Hello Bar Chart"/>,
 document.getElementById('component2'));
 
 React.render(
-<AreaChart id="chart3" height="300" width="600" series={myAreaValues} legend="true" theme="slate" title="Hello Area Chart"/>, 
+<AreaChart id="chart3" height="300" width="600" series={myAreaValues} legend="true" theme="slate" title="Hello Area Chart"/>,
 document.getElementById('component3'));
 ```
 
@@ -174,7 +162,7 @@ var myScatterValues = [
 ];
 
 React.render(
-<ScatterChart id="chart1" height="300" width="600" series={myScatterValues} legend="true" theme="light" title="Hello Scatter Chart"/>, 
+<ScatterChart id="chart1" height="300" width="600" series={myScatterValues} legend="true" theme="light" title="Hello Scatter Chart"/>,
 document.getElementById('component1'));
 ```
 
@@ -198,7 +186,7 @@ var pieSlices = [
 ];
 
 React.render(
-<PieChart id="chart1" height="300" width="600" series={pieSlices} legend="true" theme="light" title="Hello Pie Chart"/>, 
+<PieChart id="chart1" height="300" width="600" series={pieSlices} legend="true" theme="light" title="Hello Pie Chart"/>,
 document.getElementById('component1'));
 ```
 
