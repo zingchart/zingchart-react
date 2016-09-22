@@ -4,10 +4,12 @@
 
 Quickly create dynamic JavaScript charts that react when your data changes by utilizing the ZingChart library and Facebook's React together.
 
-More information : http://www.zingchart.com/blog/2015/06/12/zingchart-component-for-react/
-
-Want to see the application running? See our boilerplate repo : https://github.com/zingchart/ZingChart-React-Boilerplate
-
+## Resources:
+* [Getting started Guide](http://www.zingchart.com/blog/2015/06/12/zingchart-component-for-react/)
+* Want to see the application running? See our [boilerplate repo](https://github.com/zingchart/ZingChart-React-Boilerplate)
+* [Docs](https://www.zingchart.com/docs/)
+* [Support](https://www.zingchart.com/support/)
+ 
 ## Quick Start
 
 ### Install
@@ -17,7 +19,7 @@ npm install zingchart-react
 
 ### Usage
 
-This component is dependent upon React and the ZingChart library. The module uses the CommonJS specification and can be included in your application with bundling tools such as browserify and webpack. For more information.
+This component is dependent upon React and the ZingChart library. The module uses the CommonJS specification and can be included in your application with bundling tools such as browserify and webpack. 
 
 ---
 
