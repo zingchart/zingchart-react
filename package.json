@@ -1,6 +1,6 @@
 {
   "name": "zingchart-react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React components to generate interactive javascript charts using the ZingChart library",
   "main": "dist/zingchart-react.min.js",
   "author": "ZingChart",
