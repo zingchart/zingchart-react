@@ -1,11 +1,15 @@
 {
   "name": "zingchart-react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React components to generate interactive javascript charts using the ZingChart library",
   "main": "dist/zingchart-react.min.js",
   "author": "ZingChart",
   "homepage": "www.zingchart.com",
   "license": "MIT",
+  "scripts": {
+    "build": "gulp && gulp prod",
+    "prepublish": "npm run build"
+  },
   "keywords": [
     "react",
     "react-component",
