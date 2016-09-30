@@ -6,6 +6,10 @@
   "author": "ZingChart",
   "homepage": "www.zingchart.com",
   "license": "MIT",
+  "scripts": {
+    "build": "gulp && gulp prod",
+    "prepublish": "npm run build"
+  },
   "keywords": [
     "react",
     "react-component",

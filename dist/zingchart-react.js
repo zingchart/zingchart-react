@@ -25,7 +25,10 @@ var Core = React.createClass({displayName: "Core",
     componentWillUpdate : function(nextProps){
         zingchart.exec(this.props.id, 'setdata', {
             data : nextProps.data
-        })
+        });
+    },
+    componentWillUnmount : function(){
+        zingchart.exec(this.props.id, 'destroy');
     }
 });
 
