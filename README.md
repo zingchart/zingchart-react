@@ -1,4 +1,5 @@
 # ZingChart-React
+[![CDNJS](https://img.shields.io/cdnjs/v/zingchart-react.svg)](https://cdnjs.com/libraries/zingchart-react)
 
 *A React Component for ZingChart*
 
