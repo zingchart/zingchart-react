@@ -1,14 +1,14 @@
-var zingchart = require('zingchart');
-var React = require('react');
+import zingchart from 'zingchart';
+import React, { Component } from 'react';
 
-var Core = React.createClass({
-    render : function(){
+class Core extends Component{
+    render() {
         return (
             <div id={this.props.id}></div>
         );
-    },
+    }
     //Called after the render function.
-    componentDidMount : function(){
+    componentDidMount(){
         zingchart.render({
             id : this.props.id,
             width: (this.props.width || 600),
@@ -16,24 +16,24 @@ var Core = React.createClass({
             data : this.props.data,
             theme : (this.props.theme) ? this.props.theme : "light"
         });
-    },
+    }
     //Used to check the values being passed in to avoid unnecessary changes.
-    shouldComponentUpdate : function(nextProps, nextState){
+    shouldComponentUpdate(nextProps, nextState){
         //Lazy object comparison
         return !(JSON.stringify(nextProps.data) === JSON.stringify(this.props.data)) ;
-    },
-    componentWillUpdate : function(nextProps){
+    }
+    componentWillUpdate(nextProps){
         zingchart.exec(this.props.id, 'setdata', {
             data : nextProps.data
         });
-    },
-    componentWillUnmount : function(){
+    }
+    componentWillUnmount(){
         zingchart.exec(this.props.id, 'destroy');
     }
-});
+};
 
-var Line = React.createClass({
-    render : function(){
+class Line extends Component{
+    render(){
         var myConfig = {
             type: "line",
         	series : this.props.series
@@ -41,10 +41,10 @@ var Line = React.createClass({
         applyAttrs(this.props, myConfig);
         return (<Core id={this.props.id} height={this.props.height} width={this.props.width} data={myConfig} theme={this.props.theme}/>);
     }
-});
+};
 
-var Area = React.createClass({
-    render : function(){
+class Area extends Component{
+    render(){
         var myConfig = {
             type: "area",
         	series : this.props.series
@@ -52,10 +52,10 @@ var Area = React.createClass({
         applyAttrs(this.props, myConfig);
         return (<Core id={this.props.id} height={this.props.height} width={this.props.width} data={myConfig} theme={this.props.theme}/>);
     }
-});
+};
 
-var Bar = React.createClass({
-    render : function(){
+class Bar extends Component{
+    render(){
         var myConfig = {
             type: "bar",
         	series : this.props.series
@@ -63,10 +63,10 @@ var Bar = React.createClass({
         applyAttrs(this.props, myConfig);
         return (<Core id={this.props.id} height={this.props.height} width={this.props.width} data={myConfig} theme={this.props.theme}/>);
     }
-});
+};
 
-var Scatter = React.createClass({
-    render : function(){
+class Scatter extends Component{
+    render(){
         var myConfig = {
             type: "scatter",
         	series : this.props.series
@@ -74,10 +74,10 @@ var Scatter = React.createClass({
         applyAttrs(this.props, myConfig);
         return (<Core id={this.props.id} height={this.props.height} width={this.props.width} data={myConfig} theme={this.props.theme}/>);
     }
-});
+};
 
-var Pie = React.createClass({
-    render : function(){
+class Pie extends Component{
+    render(){
         var myConfig = {
             type: "pie",
         	series : this.props.series
@@ -85,7 +85,7 @@ var Pie = React.createClass({
         applyAttrs(this.props, myConfig);
         return (<Core id={this.props.id} height={this.props.height} width={this.props.width} data={myConfig} theme={this.props.theme}/>);
     }
-});
+};
 
 function applyAttrs(oProps, oConfig){
     if(oProps.legend && oProps.legend.toLowerCase() == "true"){
@@ -102,11 +102,11 @@ function applyAttrs(oProps, oConfig){
         }
     }
 }
-module.exports = {
-    core : Core,
-    line : Line,
-    area : Area,
-    bar : Bar,
-    pie : Pie,
-    scatter : Scatter
+export {
+    Core as core,
+    Line as line,
+    Area as area,
+    Bar as bar,
+    Pie as pie,
+    Scatter as scatter
 };
