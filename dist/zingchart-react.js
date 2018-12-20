@@ -1,7 +1,7 @@
 import zingchart from 'zingchart';
 import React, { Component } from 'react';
 
-class Core extends Component{
+export class Core extends Component{
     render() {
         return (
             React.createElement("div", {id: this.props.id})
@@ -33,7 +33,7 @@ class Core extends Component{
     }
 };
 
-class Line extends Component{
+export class Line extends Component{
     render(){
         var myConfig = {
             type: "line",
@@ -44,7 +44,7 @@ class Line extends Component{
     }
 };
 
-class Area extends Component{
+export class Area extends Component{
     render(){
         var myConfig = {
             type: "area",
@@ -55,7 +55,7 @@ class Area extends Component{
     }
 };
 
-class Bar extends Component{
+export class Bar extends Component{
     render(){
         var myConfig = {
             type: "bar",
@@ -66,7 +66,7 @@ class Bar extends Component{
     }
 };
 
-class Scatter extends Component{
+export class Scatter extends Component{
     render(){
         var myConfig = {
             type: "scatter",
@@ -77,7 +77,7 @@ class Scatter extends Component{
     }
 };
 
-class Pie extends Component{
+export class Pie extends Component{
     render(){
         var myConfig = {
             type: "pie",
@@ -103,11 +103,3 @@ function applyAttrs(oProps, oConfig){
         }
     }
 }
-export {
-    Core as core,
-    Line as line,
-    Area as area,
-    Bar as bar,
-    Pie as pie,
-    Scatter as scatter
-};

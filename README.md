@@ -20,7 +20,7 @@ npm install zingchart-react
 
 ### Usage
 
-This component is dependent upon React and the ZingChart library. The module uses the CommonJS specification and can be included in your application with bundling tools such as browserify and webpack. 
+This component is dependent upon React and the ZingChart library. The module uses the ES6 module specification and can be included in your application with bundling tools such as browserify and webpack. 
 
 ---
 
@@ -56,8 +56,9 @@ element for ZingChart to mount to, the optional height and width, and a ZingChar
 
 ```js
 //JavaScript
-var ZingChart = require('zingchart-react').core;
-var myConfig = {
+import { ZingChart } from 'zingchart-react';
+
+const  myConfig = {
  	type: "bar",
 	series : [
 		{
@@ -65,6 +66,7 @@ var myConfig = {
 		}
 	]
 };
+
 React.render(
 	<ZingChart id="myChart" height="300" width="600" data={myConfig} />,
 	document.getElementById('myContainer')
@@ -109,11 +111,9 @@ Create charts by simply inserting values directly into a component. Each series 
 
 ```js
 //Javascript
-var LineChart = require('zingchart-react').line;
-var BarChart = require('zingchart-react').bar;
-var AreaChart = require('zingchart-react').area;
+import { LineChart, BarChart, AreaChart } from 'zingchart-react';
 
-var myLineValues = [
+const myLineValues = [
     { text : "First Series", values : [0,1,2,2,4,6,7] },
     { text : "Second Series", values : [18,12,7,14,1,19,4] },
     { text : "Third Series", values : [0,1,12,12,4,6,17] },
@@ -122,11 +122,11 @@ var myLineValues = [
     { text : "Sixth Series", values : [10,6,8,2,6,3,9] },
 ];
 
-var myBarValues = [
+const myBarValues = [
     { text : "First Series", values : [0,1,2,2,4,6,7] }
 ];
 
-var myAreaValues = [
+const myAreaValues = [
     { text : "First Series", values : [0,1,2,2,4,6,7] },
     { text : "Second Series", values : [18,12,7,14,1,19,4] },
     { text : "Third Series", values : [0,1,12,12,4,6,17] },
@@ -158,8 +158,9 @@ document.getElementById('component3'));
 
 ```js
 //Javascript
-var ScatterChart = require('zingchart-react').scatter;
-var myScatterValues = [
+import { ScatterChart } from 'zingchart-react';
+
+const myScatterValues = [
     { text : "First Series", values : [ [5,2], [8,1], [2,6], [9,1] ] },
     { text : "Second Series", values : [ [8,3], [2,8], [6,9], [3,5] ] },
     { text : "Third Series", values : [ [18,3], [22,8], [16,9], [13,5] ] },
@@ -182,8 +183,9 @@ document.getElementById('component1'));
 
 ```js
 //Javascript
-var PieChart = require('zingchart-react').pie;
-var pieSlices = [
+import { PieChart } from 'zingchart-react';
+
+const pieSlices = [
     { text : "First Slice", values : [10] },
     { text : "Second Slice", values : [20] },
     { text : "Third Slice", values : [30] },
