@@ -15,7 +15,8 @@ class Core extends Component{
             height: (this.props.height || 400),
             data : this.props.data,
             theme : (this.props.theme) ? this.props.theme : "light",
-            hideprogresslogo: this.props.hideprogresslogo
+            hideprogresslogo: this.props.hideprogresslogo,
+            output: (this.props.output || 'svg'),
         });
     }
     //Used to check the values being passed in to avoid unnecessary changes.
