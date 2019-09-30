@@ -1,4 +1,4 @@
-import zingchart from 'zingchart';
+import {zingchart} from 'zingchart';
 import React, { Component } from 'react';
 
 class Core extends Component{
