@@ -7,8 +7,7 @@
   "homepage": "www.zingchart.com",
   "license": "MIT",
   "scripts": {
-    "build": "gulp && gulp prod",
-    "prepublish": "npm run build"
+    "build": "gulp && gulp prod"
   },
   "keywords": [
     "react",
@@ -25,12 +24,10 @@
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
     "gulp-react": "^3.1.0",
-    "gulp-uglify": "^3.0.0",
-    "react": "^15.3.1",
-    "zingchart": "^2.4.1"
+    "gulp-uglify": "^3.0.0"
   },
-  "peerDependencies": {
-    "react": ">=0.13",
-    "zingchart": ">=2.1.2"
+  "dependencies": {
+    "react": "^16.11.0",
+    "zingchart": "^2.8.7"
   }
 }
