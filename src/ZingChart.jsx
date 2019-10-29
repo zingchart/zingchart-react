@@ -21,15 +21,18 @@ class ZingChart extends Component {
         return window.zingchart.exec(this.id, name, args);
       };
     });
+    this.state = {
+      style : {
+        height: this.props.height || DEFAULT_HEIGHT,
+        width: this.props.width || DEFAULT_WIDTH,
+      }
+    };
+
+    // this.chart = React.createRef();
   }
   render() {
-    const style = {
-      height: '500px',
-      width: '500px',
-      border: '1px solid red'
-    }
     return (
-      <div id={this.id} style={style}>ZingChart Component</div>
+      <div id={this.id} style={this.state.style}></div>
     );
   }
 
@@ -57,22 +60,23 @@ class ZingChart extends Component {
 
       // Series change
     } else if (JSON.stringify(nextProps.series) !== JSON.stringify(this.props.series)) {
-      // zingchart.exec(this.id, 'setseriesdata', {
-      //   graphid:0,
-      //   data: this.props.series,
-      // });
-      console.log(this.props.series)
       zingchart.exec(this.id, 'setseriesdata', {
         graphid: 0,
         plotindex: 0,
-        data: this.props.series
+        data: nextProps.series
       });
 
       // Resize
     } else if (nextProps.width !== this.props.width || nextProps.height !== this.props.height) {
+      this.setState({
+        style: {
+          width: nextProps.width || DEFAULT_WIDTH,
+          height: nextProps.height || DEFAULT_HEIGHT,
+        },
+      });
       zingchart.exec(this.id, 'resize', {
-        width: this.props.width || DEFAULT_WIDTH,
-        height: this.props.height || DEFAULT_HEIGHT,
+        width: nextProps.width || DEFAULT_WIDTH,
+        height: nextProps.height || DEFAULT_HEIGHT,
       });
     }
     // React should never re-render since ZingChart controls this component.

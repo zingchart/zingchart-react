@@ -21,15 +21,13 @@ function App() {
 
   return (
     <Router>
-      <div>
-      <nav>
-          <ul>
-            <li><Link to="/">Simple</Link></li>
-            <li><Link to="/dynamic">Dynamic</Link></li>
-            <li><Link to="/events">Events</Link></li>
-            <li><Link to="/methods">Methods</Link></li>
-          </ul>
-        </nav>
+      <div >
+        <h1>zingchart-react playground</h1>
+        <p>A simple example of binding data, mutations with methods, and listening to events</p>
+          <Link to="/" className="button">Simple</Link>
+          <Link to="/dynamic" className="button">Dynamic</Link>
+          <Link to="/events" className="button">Events</Link>
+          <Link to="/methods" className="button">Methods</Link>
       </div>
       <Switch>
         <Route path="/dynamic">

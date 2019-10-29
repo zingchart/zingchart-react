@@ -15,12 +15,15 @@ class Simple extends Component {
     this.chart = React.createRef();
   }
   render() {
+
     return (
       <div >
         <ZingChart ref={this.chart} data={this.state.config}/>
       </div>
     );
+
   }
+
 }
 
 export default Simple;
