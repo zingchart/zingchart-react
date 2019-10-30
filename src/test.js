@@ -1,7 +1,7 @@
-import ExampleComponent from './'
+import ZingChart from './'
 
-describe('ExampleComponent', () => {
+describe('ZingChart', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(ZingChart).toBeTruthy()
   })
 })
