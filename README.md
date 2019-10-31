@@ -180,7 +180,7 @@ class App extends Component {
 For a list of all the methods that you can call and the parameters each method can take, refer to the complete documentation on https://www.zingchart.com/docs/methods
 
 ## Hello World and Examples
-This repository contains a "Create React App" examp[le to give you an easy way to see the component in action. 
+This repository contains a "Create React App" example to give you an easy way to see the component in action. 
 
 To start the sample application:
 ```
