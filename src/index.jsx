@@ -1,8 +1,10 @@
 import { zingchart } from 'zingchart';
 import React, { Component } from 'react';
-import { DEFAULT_WIDTH, DEFAULT_HEIGHT, EVENT_NAMES, METHOD_NAMES } from './constants.js';
+import constants from 'zingchart-constants';
 
-// One time setup globally to handle all zingchart-vue objects in the app space.
+const { DEFAULT_WIDTH, DEFAULT_HEIGHT, EVENT_NAMES, METHOD_NAMES } = constants;
+
+// One time setup globally to handle all zingchart-react objects in the app space.
 if (!window.ZCReact) {
   window.ZCReact = {
     instances: {},

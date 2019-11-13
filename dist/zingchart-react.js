@@ -16,11 +16,237 @@ if(typeof(ZC)==="undefined"){eval(function(p,a,c,k,e,d){e=function(c){return (c<
 
 let ZC$1 = window.ZC;
 
-var EVENT_NAMES = ['animation_end', 'animation_start', 'animation_step', 'modify', 'node_add', 'node_remove', 'plot_add', 'plot_modify', 'plot_remove', 'reload', 'setdata', 'data_export', 'image_save', 'print', 'feed_clear', 'feed_interval_modify', 'feed_start', 'feed_stop', 'beforedestroy', 'click', 'complete', 'dataparse', 'dataready', 'destroy', 'guide_mousemove', 'load', 'menu_item_click', 'resize', 'Graph Events', 'gcomplete', 'gload', 'History Events', 'history_back', 'history_forward', 'Interactive Events', 'node_deselect', 'node_select', 'plot_deselect', 'plot_select', 'legend_item_click', 'legend_marker_click', 'node_click', 'node_doubleclick', 'node_mouseout', 'node_mouseover', 'node_set', 'label_click', 'label_mousedown', 'label_mouseout', 'label_mouseover', 'label_mouseup', 'legend_marker_click', 'shape_click', 'shape_mousedown', 'shape_mouseout', 'shape_mouseover', 'shape_mouseup', 'plot_add', 'plot_click', 'plot_doubleclick', 'plot_modify', 'plot_mouseout', 'plot_mouseover', 'plot_remove', 'about_hide', 'about_show', 'bugreport_hide', 'bugreport_show', 'dimension_change', 'legend_hide', 'legend_maximize', 'legend_minimize', 'legend_show', 'lens_hide', 'lens_show', 'plot_hide', 'plot_show', 'source_hide', 'source_show'];
+var EVENT_NAMES = [
+  'about_hide',
+  'about_show',
+  'animation_end',
+  'animation_start',
+  'animation_step',
+  'beforedestroy',
+  'bugreport_hide',
+  'bugreport_show',
+  'click',
+  'complete',
+  'data_export',
+  'dataexport',
+  'dataload',
+  'dataparse',
+  'dataready',
+  'destroy',
+  'dimension_change',
+  'error',
+  'feed_clear',
+  'feed_interval_modify',
+  'feed_start',
+  'feed_stop',
+  'gcomplete',
+  'gload',
+  'gparse',
+  'guide_mousemove',
+  'guide_mouseout',
+  'guide_mouseout',
+  'heatmap.mousemove',
+  'history_back',
+  'history_forward',
+  'image_save',
+  'label_click',
+  'label_mousedown',
+  'label_mouseout',
+  'label_mouseover',
+  'label_mouseup',
+  'legend_hide',
+  'legend_item_click',
+  'legend_item_mousemove',
+  'legend_item_mouseout',
+  'legend_item_mouseout',
+  'legend_item_mouseover',
+  'legend_marker_click',
+  'legend_marker_click',
+  'legend_maximize',
+  'legend_minimize',
+  'legend_minimize_click',
+  'legend_pagination_click',
+  'legend_show',
+  'legend-drag_mousedown',
+  'lens_hide',
+  'lens_show',
+  'load',
+  'maps.zoom',
+  'menu_item_click',
+  'modify',
+  'modulesready',
+  'mousewheel',
+  'node_add',
+  'node_click',
+  'node_deselect',
+  'node_doubleclick',
+  'node_mousedown',
+  'node_mouseout',
+  'node_mouseover',
+  'node_mouseup',
+  'node_remove',
+  'node_select',
+  'node_set',
+  'objectsinit',
+  'objectsready',
+  'overscroll',
+  'plot_add',
+  'plot_click',
+  'plot_deselect',
+  'plot_doubleclick',
+  'plot_hide',
+  'plot_modify',
+  'plot_mouseout',
+  'plot_mouseover',
+  'plot_remove',
+  'plot_select',
+  'plot_show',
+  'postzoom',
+  'print',
+  'reload',
+  'render',
+  'resize',
+  'setdata',
+  'shape_click',
+  'shape_mousedown',
+  'shape_mouseout',
+  'shape_mouseover',
+  'shape_mouseup',
+  'source_hide',
+  'source_show',
+  'swipe',
+  'touchemove',
+  'touchend',
+  'touchstart',
+  'zingchart.plugins.selection-tool.mouseup',
+  'zingchart.plugins.selection-tool.selection',
+  'zoom'
+];
 
-var METHOD_NAMES = ["addplot", "appendseriesdata", "appendseriesvalues", "getseriesdata", "getseriesvalues", "modifyplot", "removenode", "removeplot", "set3dview", "setnodevalue", "setseriesdata", "setseriesvalues", "downloadCSV", "downloadXLS", "downloadRAW", "exportdata", "getimagedata", "print", "saveasimage", "exportimage", "addmenuitem", "addscalevalue", "destroy", "load", "modify", "reload", "removescalevalue", "resize", "setdata", "setguide", "update", "clearfeed", "getinterval", "setinterval", "startfeed", "stopfeed", "getcharttype", "getdata", "getgraphlength", "getnodelength", "getnodevalue", "getobjectinfo", "getplotlength", "getplotvalues", "getrender", "getrules", "getscales", "getversion", "getxyinfo", "get3dview", "goback", "goforward", "addnote", "removenote", "updatenote", "addobject", "removeobject", "repaintobjects", "updateobject", "addrule", "removerule", "updaterule", "Selection", "clearselection", "deselect", "getselection", "select", "setselection", "clicknode", "closemodal", "disable", "enable", "exitfullscreen", "fullscreen", "hideguide", "hidemenu", "hideplot/plothide", "legendmaximize", "legendminimize", "openmodal", "showhoverstate", "showguide", "showmenu", "showplot/plotshow", "toggleabout", "togglebugreport", "toggledimension", "togglelegend", "togglesource", "toggleplot", "hidetooltip", "locktooltip", "showtooltip", "unlocktooltip", "viewall", "zoomin", "zoomout", "zoomto", "zoomtovalues"];
-var DEFAULT_WIDTH = '100%';
-var DEFAULT_HEIGHT = 480;
+var METHOD_NAMES = [
+  'addgraph',
+  'addmenuitem',
+  'addnode',
+  'addnote',
+  'addobject',
+  'addplot',
+  'addrule',
+  'addscalevalue',
+  'appendseriesdata',
+  'appendseriesvalues',
+  'clearfeed',
+  'clearscroll',
+  'clearselection',
+  'clicknode',
+  'clicknode',
+  'closemodal',
+  'closemodal',
+  'destroy/zcdestroy',
+  'disable',
+  'downloadCSV',
+  'downloadRAW',
+  'downloadXLS',
+  'exitfullscreen',
+  'exportdata',
+  'exportimage',
+  'fullscreen',
+  'get3dview',
+  'getbubblesize',
+  'getcharttype',
+  'getdata',
+  'getgraphlength',
+  'getimagedata',
+  'getinterval',
+  'getnodelength',
+  'getnodevalue',
+  'getobjectinfo',
+  'getoriginaljson',
+  'getpage',
+  'getplotlength',
+  'getplotvalues',
+  'getrender',
+  'getrules',
+  'getscaleinfo',
+  'getscales',
+  'getseriesdata',
+  'getseriesdata',
+  'getseriesvalues',
+  'getversion',
+  'getxyinfo',
+  'goback',
+  'goforward',
+  'hideguide',
+  'hidemenu',
+  'hideplot/plothide',
+  'hidetooltip',
+  'legendmaximize',
+  'legendminimize',
+  'legendscroll',
+  'load',
+  'loadstorage',
+  'mapdata',
+  'mapdata',
+  'modify',
+  'modifyplot',
+  'openmodal',
+  'print',
+  'reload',
+  'removegraph',
+  'removenode',
+  'removenote',
+  'removeobject',
+  'removeplot',
+  'removerule',
+  'removescalevalue',
+  'repaintobjects',
+  'resize',
+  'saveasimage',
+  'set3dview',
+  'setcharttype',
+  'setdata',
+  'setguide',
+  'setinterval',
+  'setmode',
+  'setnodevalue',
+  'setpage',
+  'setscalevalues',
+  'setseriesdata',
+  'setseriesvalues',
+  'showhoverstate',
+  'showmenu',
+  'showplot/plotshow',
+  'showtooltip',
+  'startfeed',
+  'stopfeed',
+  'togglebugreport',
+  'toggledimension',
+  'togglelegend',
+  'toggleplot',
+  'unbinddocument',
+  'update',
+  'updatenote',
+  'updateobject',
+  'updaterule',
+  'viewDataTable',
+  'zoomin',
+  'zoomout',
+  'zoomto',
+  'zoomtovalues'
+];
+
+var MISC = {
+  DEFAULT_WIDTH: '100%',
+  DEFAULT_HEIGHT: 480,
+};
+
+const {DEFAULT_WIDTH, DEFAULT_HEIGHT} = MISC;
+
+var constants = {
+  EVENT_NAMES,
+  METHOD_NAMES,
+  DEFAULT_WIDTH,
+  DEFAULT_HEIGHT
+};
 
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -70,7 +296,13 @@ var possibleConstructorReturn = function (self, call) {
   return call && (typeof call === "object" || typeof call === "function") ? call : self;
 };
 
-// One time setup globally to handle all zingchart-vue objects in the app space.
+var DEFAULT_WIDTH$1 = constants.DEFAULT_WIDTH,
+    DEFAULT_HEIGHT$1 = constants.DEFAULT_HEIGHT,
+    EVENT_NAMES$1 = constants.EVENT_NAMES,
+    METHOD_NAMES$1 = constants.METHOD_NAMES;
+
+// One time setup globally to handle all zingchart-react objects in the app space.
+
 if (!window.ZCReact) {
   window.ZCReact = {
     instances: {},
@@ -89,15 +321,15 @@ var ZingChart = function (_Component) {
     _this.id = _this.props.id || 'zingchart-react-' + window.ZCReact.count++;
 
     // Bind all methods available to zingchart to be accessed via Refs.
-    METHOD_NAMES.forEach(function (name) {
+    METHOD_NAMES$1.forEach(function (name) {
       _this[name] = function (args) {
         return window.zingchart.exec(_this.id, name, args);
       };
     });
     _this.state = {
       style: {
-        height: _this.props.height || DEFAULT_HEIGHT,
-        width: _this.props.width || DEFAULT_WIDTH
+        height: _this.props.height || DEFAULT_HEIGHT$1,
+        width: _this.props.width || DEFAULT_WIDTH$1
       }
     };
     return _this;
@@ -115,7 +347,7 @@ var ZingChart = function (_Component) {
 
       // Bind all events registered.
       Object.keys(this.props).forEach(function (eventName) {
-        if (EVENT_NAMES.includes(eventName)) {
+        if (EVENT_NAMES$1.includes(eventName)) {
           // Filter through the provided events list, then register it to zingchart.
           window.zingchart.bind(_this2.id, eventName, function (result) {
             _this2.props[eventName](result);
@@ -149,13 +381,13 @@ var ZingChart = function (_Component) {
       } else if (nextProps.width !== this.props.width || nextProps.height !== this.props.height) {
         this.setState({
           style: {
-            width: nextProps.width || DEFAULT_WIDTH,
-            height: nextProps.height || DEFAULT_HEIGHT
+            width: nextProps.width || DEFAULT_WIDTH$1,
+            height: nextProps.height || DEFAULT_HEIGHT$1
           }
         });
         zingchart.exec(this.id, 'resize', {
-          width: nextProps.width || DEFAULT_WIDTH,
-          height: nextProps.height || DEFAULT_HEIGHT
+          width: nextProps.width || DEFAULT_WIDTH$1,
+          height: nextProps.height || DEFAULT_HEIGHT$1
         });
       }
       // React should never re-render since ZingChart controls this component.
@@ -166,8 +398,8 @@ var ZingChart = function (_Component) {
     value: function renderChart() {
       var renderObject = {
         id: this.id,
-        width: this.props.width || DEFAULT_WIDTH,
-        height: this.props.height || DEFAULT_HEIGHT,
+        width: this.props.width || DEFAULT_WIDTH$1,
+        height: this.props.height || DEFAULT_HEIGHT$1,
         data: this.props.data
       };
 
