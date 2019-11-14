@@ -1,5 +1,7 @@
 'use strict';
 
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var React = require('react');
@@ -420,5 +422,8 @@ var ZingChart = function (_Component) {
   return ZingChart;
 }(React.Component);
 
-module.exports = ZingChart;
+var ZC$2 = window.ZC;
+
+exports.default = ZingChart;
+exports.ZC = ZC$2;
 //# sourceMappingURL=zingchart-react.js.map

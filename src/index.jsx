@@ -106,4 +106,5 @@ class ZingChart extends Component {
   }
 }
 
-export default ZingChart
+let ZC = window.ZC;
+export {ZingChart as default, ZC};
