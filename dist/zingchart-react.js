@@ -236,6 +236,29 @@ var METHOD_NAMES = [
   'zoomtovalues'
 ];
 
+var MARKER_NAMES = [
+  'square',
+  'parallelogram',
+  'trapezoid',
+  'circle',
+  'diamond',
+  'triangle',
+  'ellipse',
+  'star5',
+  'star6',
+  'star7',
+  'star8',
+  'rpoly5',
+  'rpoly6',
+  'rpoly7',
+  'rpoly8',
+  'gear5',
+  'gear6',
+  'gear7',
+  'gear8',
+  'pie',
+];
+
 var MISC = {
   DEFAULT_WIDTH: '100%',
   DEFAULT_HEIGHT: 480,
@@ -246,6 +269,7 @@ const {DEFAULT_WIDTH, DEFAULT_HEIGHT} = MISC;
 var constants = {
   EVENT_NAMES,
   METHOD_NAMES,
+  MARKER_NAMES,
   DEFAULT_WIDTH,
   DEFAULT_HEIGHT
 };

@@ -11,6 +11,7 @@ import Dynamic from './Dynamic.jsx';
 import Events from './Events.jsx';
 import Methods from './Methods.jsx';
 import Simple from './Simple.jsx';
+import ModuleChart from './ModuleChart.jsx';
 import './App.css';
 
 // PAGES
@@ -24,6 +25,7 @@ function App() {
         <h1>zingchart-react playground</h1>
         <p>A simple example of binding data, mutations with methods, and listening to events</p>
           <Link to="/" className="button">Simple</Link>
+          <Link to="/module-chart" className="button">Module Chart</Link>
           <Link to="/dynamic" className="button">Dynamic</Link>
           <Link to="/events" className="button">Events</Link>
           <Link to="/methods" className="button">Methods</Link>
@@ -31,6 +33,9 @@ function App() {
       <Switch>
         <Route path="/dynamic">
           <Dynamic />
+        </Route>
+        <Route path="/module-chart">
+          <ModuleChart />
         </Route>
         <Route path="/events">
           <Events />

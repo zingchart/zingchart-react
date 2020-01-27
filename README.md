@@ -17,6 +17,9 @@ You can either include the zingchart-react component to your project via UMD or 
 ### Modules (reccomended)
 ```js
 import ZingChart from 'zingchart-react';
+// ALL MODULE CHARTS REQUIRE AN EXPLICIT IMPORT
+// import depth module chart
+import test from 'zingchart-react/dist/modules/zingchart-depth.min.js';
 ```
 
 or 
