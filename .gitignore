@@ -4,9 +4,8 @@
 # dependencies
 node_modules
 
-# builds
+# all builds
 build
-dist
 .rpt2_cache
 
 # misc
@@ -20,3 +19,11 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+## dist output files
+dist/zingchart-react.es.js
+dist/zingchart-react.es.js.map
+
+## Unignored Files
+!dist/modules/**
+!dist/zingchart-react.js

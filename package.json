@@ -1,8 +1,8 @@
 {
   "name": "zingchart-react",
   "version": "2.1.0",
-  "description": "ZingChart React Component",
-  "author": "zingchart",
+  "description": "ZingChart React Component wrapper to allow native react syntax for events, methods and styling.",
+  "author": "ZingSoft Inc.",
   "license": "MIT",
   "repository": "zingchart/zingchart-react",
   "main": "dist/zingchart-react.js",
@@ -27,7 +27,8 @@
     "start": "rollup -c -w",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "publish": "npm run build && npm run publish"
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
