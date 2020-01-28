@@ -1,5 +1,8 @@
 # zingchart-react
 
+![](https://github.com/zingchart/zingchart-react/workflows/Build/badge.svg?branch=master)
+![](https://github.com/zingchart/zingchart-react/workflows/Test/badge.svg?branch=master)
+
 Quickly add charts to your React application with our ZingChart component
 
 This guide assumes some basic working knowledge of React and jsx.

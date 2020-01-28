@@ -1,0 +1,40 @@
+# Name is optional and if present must be used
+# in the url path for badges
+name: Build
+
+# Run on a dev branch
+on: 
+  push:
+    branches:
+      - master
+      - dev
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  Build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.13]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      # npm ci REQUIRES a package-lock.json file
+      - name: Install Fresh Dependencies
+        run: |
+          rm package-lock.json
+          npm install
+      - name: Build library
+        run: npm run build
+      - name: Log build output
+        run: |
+          ls -alt dist/
+          ls -alt dist/modules/
