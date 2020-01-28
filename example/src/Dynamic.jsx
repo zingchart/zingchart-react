@@ -24,7 +24,7 @@ class Dynamic extends Component {
     );
   }
   componentDidMount() {
-    const updater = setInterval(() => {
+    this.state.updater = setInterval(() => {
       console.log(randomData(10));
       this.setState({
         series: {

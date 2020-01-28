@@ -27,3 +27,6 @@ dist/zingchart-react.es.js.map
 ## Unignored Files
 !dist/modules/**
 !dist/zingchart-react.js
+
+# Example files
+example/package-lock.json
