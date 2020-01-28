@@ -6,7 +6,7 @@ name: Deploy Dev CDN
 on: 
   push:
     branches:
-    - master
+    - ci-integration
 
 jobs:
   Build:
