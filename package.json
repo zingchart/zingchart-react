@@ -68,7 +68,7 @@
     "dist"
   ],
   "dependencies": {
-    "zingchart": "^2.8.8",
+    "zingchart": "latest",
     "zingchart-constants": "github:zingchart/zingchart-constants#master"
   }
 }
