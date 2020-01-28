@@ -19,7 +19,15 @@ You can either include the zingchart-react component to your project via UMD or 
 import ZingChart from 'zingchart-react';
 ```
 
-or 
+You must **EXPLICITLY IMPORT MODULE CHARTS**. The modules are 
+wrapped as a closure an eval statement so there is **NO** default
+export objects. Just import them.
+
+```js
+import ZingChart from 'zingchart-react';
+// EXPLICITLY IMPORT MODULE
+import 'zingchart-react/dist/modules/zingchart-depth.min.js';
+```
 
 ### UMD
 
