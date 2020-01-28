@@ -3,7 +3,14 @@
 name: Test
 
 # Run on a dev branch
-on: [push]
+on: 
+  push:
+    branches:
+      - master
+      - dev
+  pull_request:
+    branches:
+      - master
 
 jobs:
   Test:
