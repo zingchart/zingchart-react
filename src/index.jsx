@@ -1,4 +1,4 @@
-import { zingchart } from 'zingchart';
+import zingchart from 'zingchart/es6';
 import React, { Component } from 'react';
 import constants from 'zingchart-constants';
 
