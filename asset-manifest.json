@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/zingchart-react/static/css/main.8cd5a328.chunk.css",
+    "main.js": "/zingchart-react/static/js/main.81cc0ee4.chunk.js",
+    "main.js.map": "/zingchart-react/static/js/main.81cc0ee4.chunk.js.map",
+    "runtime-main.js": "/zingchart-react/static/js/runtime-main.4d4b6b9a.js",
+    "runtime-main.js.map": "/zingchart-react/static/js/runtime-main.4d4b6b9a.js.map",
+    "static/js/2.33ef1e28.chunk.js": "/zingchart-react/static/js/2.33ef1e28.chunk.js",
+    "static/js/2.33ef1e28.chunk.js.map": "/zingchart-react/static/js/2.33ef1e28.chunk.js.map",
+    "index.html": "/zingchart-react/index.html",
+    "precache-manifest.5fafbce5a675010fbb7d37f9f0c0623c.js": "/zingchart-react/precache-manifest.5fafbce5a675010fbb7d37f9f0c0623c.js",
+    "service-worker.js": "/zingchart-react/service-worker.js",
+    "static/css/main.8cd5a328.chunk.css.map": "/zingchart-react/static/css/main.8cd5a328.chunk.css.map",
+    "static/js/2.33ef1e28.chunk.js.LICENSE": "/zingchart-react/static/js/2.33ef1e28.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4d4b6b9a.js",
+    "static/js/2.33ef1e28.chunk.js",
+    "static/css/main.8cd5a328.chunk.css",
+    "static/js/main.81cc0ee4.chunk.js"
+  ]
+}
