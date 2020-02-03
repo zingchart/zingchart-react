@@ -12,6 +12,8 @@ Quickly add charts to your React application with our ZingChart component
 
 This guide assumes some basic working knowledge of React and jsx.
 
+[![](https://d2ddoduugvun08.cloudfront.net/items/0g1a3H413A3k3r3Z0d2Y/Screen%20Recording%202020-02-03%20at%2002.20%20PM.gif)](https://codesandbox.io/s/zingchart-react-wrapper-example-dxfc9)
+
 ## 1. Install
 
 Install the zingchart-react package via npm
