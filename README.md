@@ -2,6 +2,11 @@
 
 ![](https://github.com/zingchart/zingchart-react/workflows/Build/badge.svg?branch=master)
 ![](https://github.com/zingchart/zingchart-react/workflows/Test/badge.svg?branch=master)
+![](https://img.shields.io/npm/dw/zingchart-react)
+
+![](https://img.shields.io/david/zingchart/zingchart-react)
+![](https://img.shields.io/david/peer/zingchart/zingchart-react)
+![](https://img.shields.io/david/dev/zingchart/zingchart-react)
 
 Quickly add charts to your React application with our ZingChart component
 
