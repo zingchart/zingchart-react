@@ -202,5 +202,5 @@ This repository contains a "Create React App" example to give you an easy way to
 
 To start the sample application:
 ```
-$ cd examples && npm run start 
+$ cd example && npm run start 
 ```
