@@ -324,6 +324,7 @@ var possibleConstructorReturn = function (self, call) {
 
 var DEFAULT_WIDTH$1 = constants.DEFAULT_WIDTH,
     DEFAULT_HEIGHT$1 = constants.DEFAULT_HEIGHT,
+    DEFAULT_OUTPUT = constants.DEFAULT_OUTPUT,
     EVENT_NAMES$1 = constants.EVENT_NAMES,
     METHOD_NAMES$1 = constants.METHOD_NAMES;
 
@@ -416,6 +417,7 @@ var ZingChart = function (_Component) {
           height: nextProps.height || DEFAULT_HEIGHT$1
         });
       }
+
       // React should never re-render since ZingChart controls this component.
       return false;
     }
@@ -426,7 +428,8 @@ var ZingChart = function (_Component) {
         id: this.id,
         width: this.props.width || DEFAULT_WIDTH$1,
         height: this.props.height || DEFAULT_HEIGHT$1,
-        data: this.props.data
+        data: this.props.data,
+        output: this.props.output || DEFAULT_OUTPUT
       };
 
       if (this.props.series) {

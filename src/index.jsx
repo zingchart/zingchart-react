@@ -2,7 +2,7 @@ import zingchart from 'zingchart/es6';
 import React, { Component } from 'react';
 import constants from 'zingchart-constants';
 
-const { DEFAULT_WIDTH, DEFAULT_HEIGHT, EVENT_NAMES, METHOD_NAMES } = constants;
+const { DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_OUTPUT, EVENT_NAMES, METHOD_NAMES } = constants;
 
 // One time setup globally to handle all zingchart-react objects in the app space.
 if (!window.ZCReact) {
@@ -78,7 +78,8 @@ class ZingChart extends Component {
         width: nextProps.width || DEFAULT_WIDTH,
         height: nextProps.height || DEFAULT_HEIGHT,
       });
-    }
+    } 
+
     // React should never re-render since ZingChart controls this component.
     return false;
   }
@@ -89,6 +90,7 @@ class ZingChart extends Component {
       width: this.props.width || DEFAULT_WIDTH,
       height: this.props.height || DEFAULT_HEIGHT,
       data: this.props.data,
+      output: this.props.output || DEFAULT_OUTPUT,
     };
 
     if (this.props.series) {

@@ -1,6 +1,6 @@
 {
   "name": "zingchart-react",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "ZingChart React Component wrapper to allow native react syntax for events, methods and styling.",
   "author": "ZingSoft Inc.",
   "license": "MIT",
