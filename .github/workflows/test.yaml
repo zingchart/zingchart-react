@@ -34,5 +34,5 @@ jobs:
           npm install
       - name: Build library
         run: npm run build
-      - name: Run Tests
+      - name: Run Unit Tests
         run: npm run test:unit
