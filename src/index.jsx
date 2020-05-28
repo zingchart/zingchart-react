@@ -109,4 +109,5 @@ class ZingChart extends Component {
 }
 
 let ZC = window.ZC;
-export {ZingChart as default, ZC};
+// export ZingChart react class, ZC and zingchart window ojects
+export {ZingChart as default, ZC, zingchart};

@@ -46,6 +46,21 @@ In your main html file, include the package as a script include.
 <script src="/path/to/zingchart-react.js"></script>
 ```
 
+### Others
+
+If you need access to the `window.ZC` and `window.zingchart` objects we have
+exported those as well. Here is how to import them.
+
+```javascript
+// export ZingChart react class then the ZC and zingchart window ojects
+import {default as ZingChart, zingchart, ZC} from 'zingchart-react';
+
+// then you can define global zingchart variables (typically for performance optimization)
+zingchart.DEV.SKIPPROGRESS = 1; // skips the intro loading screen (most likely invisible to human eye anyway)
+zingchart.DEV.RESOURCES = 0; // indicates to the lib that there are no external resources to load (images)
+zingchart.DEV.KEEPSOURCE = 0; // prevents lib from storing the original data package
+zingchart.DEV.COPYDATA = 0; // prevents lib from creating a copy of the data package instead of working with the provided one (which can be altered)
+```
 
 ## Usage
 

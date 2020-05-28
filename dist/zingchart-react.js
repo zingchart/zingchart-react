@@ -453,4 +453,5 @@ var ZC$2 = window.ZC;
 
 exports.default = ZingChart;
 exports.ZC = ZC$2;
+exports.zingchart = zingchart;
 //# sourceMappingURL=zingchart-react.js.map
