@@ -108,6 +108,9 @@ class ZingChart extends Component {
   }
 }
 
+// assign window level constants to local vars for export
 let ZC = window.ZC;
-// export ZingChart react class, ZC and zingchart window ojects
-export {ZingChart as default, ZC, zingchart};
+let ZINGCHART = window.zingchart;
+
+// export ZingChart react class, ZC and zingchart window objects
+export {ZingChart as default, ZC, ZINGCHART as zingchart};
