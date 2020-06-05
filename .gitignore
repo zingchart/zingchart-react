@@ -30,3 +30,6 @@ dist/zingchart-react.es.js.map
 
 # Example files
 example/package-lock.json
+
+# Outher output files
+CHANGELOG.md
