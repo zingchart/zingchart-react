@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {default as ZingChart, zingchart} from 'zingchart-react';
-
-console.log(zingchart);
+import 'zingchart/es6';
+import ZingChart from 'zingchart-react';
 
 class Simple extends Component {
   constructor(props) {

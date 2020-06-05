@@ -1,4 +1,3 @@
-import zingchart from 'zingchart/es6';
 import React, { Component } from 'react';
 import constants from 'zingchart-constants';
 
@@ -108,9 +107,5 @@ class ZingChart extends Component {
   }
 }
 
-// assign window level constants to local vars for export
-let ZC = window.ZC;
-let ZINGCHART = window.zingchart;
-
-// export ZingChart react class, ZC and zingchart window objects
-export {ZingChart as default, ZC, ZINGCHART as zingchart};
+// export ZingChart react class as the default
+export {ZingChart as default};

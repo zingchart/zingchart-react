@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'zingchart/es6';
 import ZingChart from 'zingchart-react';
 
 class Methods extends Component {

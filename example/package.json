@@ -25,6 +25,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-eslint": "^10.1.0"
+    "babel-eslint": "^10.1.0",
+    "commitizen": "^4.1.2"
   }
 }

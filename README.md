@@ -1,5 +1,3 @@
-# zingchart-react
-
 ![](https://img.shields.io/npm/v/zingchart-react)
 ![](https://github.com/zingchart/zingchart-react/workflows/Build/badge.svg?branch=master)
 ![](https://github.com/zingchart/zingchart-react/workflows/Test/badge.svg?branch=master)
@@ -9,24 +7,42 @@
 ![](https://img.shields.io/david/peer/zingchart/zingchart-react)
 ![](https://img.shields.io/david/dev/zingchart/zingchart-react)
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
+[![](https://d2ddoduugvun08.cloudfront.net/items/1L0T1l1e0v2t150Q3e1y/Screen%20Recording%202020-06-04%20at%2011.47%20PM.gif?X-CloudApp-Visitor-Id=3179966)](https://codesandbox.io/s/zingchart-react-wrapper-example-dxfc9)
+
+## Quickstart Guide
+
 Quickly add charts to your React application with our ZingChart component
 
 This guide assumes some basic working knowledge of React and jsx.
 
-[![](https://d2ddoduugvun08.cloudfront.net/items/0g1a3H413A3k3r3Z0d2Y/Screen%20Recording%202020-02-03%20at%2002.20%20PM.gif)](https://codesandbox.io/s/zingchart-react-wrapper-example-dxfc9)
 
 ## 1. Install
 
-Install the zingchart-react package via npm
+Install the `zingchart-react` package via npm
 
-`$ npm install zingchart-react`
+`npm install zingchart-react`
 
-## 2. Include the component in your project
+## 2. Include the `zinchart` package in your project
+
+The `zingchart` package is a **DIRECT** dependency of `zingchart-react` but you can also update this package outside of this component. Meaning the wrapper is no longer tied to a ZingChart library version, but just the component itself.
+
+You can import the library like so:
+
+```javascript
+// import the es6 version
+import 'zingchart/es6';
+```
+
+## 3. Include the component in your project 
 
 You can either include the zingchart-react component to your project via UMD or modules (reccomended).
 
+
 ### Modules (reccomended)
 ```js
+import 'zingchart/es6';
 import ZingChart from 'zingchart-react';
 ```
 
@@ -35,6 +51,7 @@ wrapped as a closure an eval statement so there is **NO** default
 export objects. Just import them.
 
 ```js
+import 'zingchart/es6';
 import ZingChart from 'zingchart-react';
 // EXPLICITLY IMPORT MODULE
 import 'zingchart-react/dist/modules/zingchart-depth.min.js';
@@ -44,23 +61,24 @@ import 'zingchart-react/dist/modules/zingchart-depth.min.js';
 
 In your main html file, include the package as a script include.
 ```html
+<script src="/path/to/zingchart.min.js"></script>
 <script src="/path/to/zingchart-react.js"></script>
 ```
 
-### Others
+### `zingchart` Global Objects
 
-If you need access to the `window.ZC` and `window.zingchart` objects we have
-exported those as well. Here is how to import them.
+If you need access to the `window.zingchart` objects for licensing or development flags.
 
 ```javascript
-// export ZingChart react class then the ZC and zingchart window ojects
-import {default as ZingChart, zingchart, ZC} from 'zingchart-react';
+import zingchart from 'zingchart/es6';
+import ZingChart from 'zingchart-react';
 
-// then you can define global zingchart variables (typically for performance optimization)
-zingchart.DEV.SKIPPROGRESS = 1; // skips the intro loading screen (most likely invisible to human eye anyway)
-zingchart.DEV.RESOURCES = 0; // indicates to the lib that there are no external resources to load (images)
+// zingchart object for performance flags
 zingchart.DEV.KEEPSOURCE = 0; // prevents lib from storing the original data package
-zingchart.DEV.COPYDATA = 0; // prevents lib from creating a copy of the data package instead of working with the provided one (which can be altered)
+zingchart.DEV.COPYDATA = 0; // prevents lib from creating a copy of the data package 
+
+// ZC object for license key
+zingchart.LICENSE = ['abcdefghijklmnopqrstuvwxy'];
 ```
 
 ## Usage
@@ -94,6 +112,9 @@ class App extends Component {
 
 
 ## Parameters
+
+The properties, or parameters, you can pass to the `<zingchart>` tag itself.
+
 
 ### data [object]
 
@@ -219,10 +240,11 @@ class App extends Component {
 
 For a list of all the methods that you can call and the parameters each method can take, refer to the complete documentation on https://www.zingchart.com/docs/methods
 
-## Hello World and Examples
+## Working Example
+
 This repository contains a "Create React App" example to give you an easy way to see the component in action. 
 
 To start the sample application:
 ```
-$ cd example && npm run start 
+cd example && npm run start 
 ```
