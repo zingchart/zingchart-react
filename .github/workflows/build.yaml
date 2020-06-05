@@ -37,4 +37,3 @@ jobs:
       - name: Log build output
         run: |
           ls -alt dist/
-          ls -alt dist/modules/
