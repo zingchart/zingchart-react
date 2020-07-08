@@ -74,6 +74,8 @@
   "files": [
     "dist"
   ],
+  "typesUrl": "https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html",
+  "types": "No Definition here as .d.ts file lives inside of dist folder as defined by files config",
   "dependencies": {
     "zingchart": "latest",
     "zingchart-constants": "github:zingchart/zingchart-constants#master"
