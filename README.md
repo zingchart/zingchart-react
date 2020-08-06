@@ -53,8 +53,9 @@ export objects. Just import them.
 ```js
 import 'zingchart/es6';
 import ZingChart from 'zingchart-react';
-// EXPLICITLY IMPORT MODULE
-import 'zingchart-react/dist/modules/zingchart-depth.min.js';
+// EXPLICITLY IMPORT MODULE from node_modules
+import "zingchart/modules-es6/zingchart-maps.min.js";
+import "zingchart/modules-es6/zingchart-maps-usa.min.js";
 ```
 
 ### UMD
@@ -200,6 +201,7 @@ For a list of all the events that you can listen to, refer to the complete docum
 
 
 ### Methods
+
 All zingchart methods are readily available on the component's instance to call. For example, to add a new plot node to the chart:
 
 ```jsx
