@@ -66,9 +66,11 @@ In your main html file, include the package as a script include.
 <script src="/path/to/zingchart-react.js"></script>
 ```
 
-### `zingchart` Global Objects
+### `zingchart` Global Object
 
-If you need access to the `window.zingchart` objects for licensing or development flags.
+If you need access to the `window.zingchart` objects for licensing or development flags or any top level 
+variables for other modules like `zingchart.loadGeoJSON()`. This is all exposed by importing the library as 
+the `zingchart` variable with `import zingchart from 'zingchart/es6'`.
 
 ```javascript
 import zingchart from 'zingchart/es6';

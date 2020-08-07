@@ -8,6 +8,7 @@
   "main": "dist/zingchart-react.js",
   "module": "dist/zingchart-react.es.js",
   "jsnext:main": "dist/zingchart-react.es.js",
+  "homepage": "https://www.zingchart.com/",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
