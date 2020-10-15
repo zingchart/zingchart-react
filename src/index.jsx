@@ -15,7 +15,7 @@ class ZingChart extends Component {
   constructor(props) {
     super(props);
     this.id = this.props.id || 'zingchart-react-' + window.ZCReact.count++;
-
+    console.log(props);
     // Bind all methods available to zingchart to be accessed via Refs.
     METHOD_NAMES.forEach(name => {
       this[name] = args => {
@@ -84,13 +84,16 @@ class ZingChart extends Component {
   }
 
   renderChart() {
-    const renderObject = {
-      id: this.id,
-      width: this.props.width || DEFAULT_WIDTH,
-      height: this.props.height || DEFAULT_HEIGHT,
-      data: this.props.data,
-      output: this.props.output || DEFAULT_OUTPUT,
-    };
+    const renderObject = {};
+    Object.keys(this.props).forEach(prop => {
+      renderObject[prop] = this.props[prop];
+    })
+    // Overwrite some existing props.
+    renderObject.id = this.id;
+    renderObject.width = this.props.width || DEFAULT_WIDTH;
+    renderObject.height = this.props.height || DEFAULT_HEIGHT;
+    renderObject.data = this.props.data;
+    renderObject.output = this.props.output || DEFAULT_OUTPUT;
 
     if (this.props.series) {
       renderObject.data.series = this.props.series;
@@ -99,7 +102,6 @@ class ZingChart extends Component {
       renderObject.defaults = this.props.theme;
     }
     zingchart.render(renderObject);
-
   }
 
   componentWillUnmount() {

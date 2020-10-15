@@ -169,6 +169,8 @@ The theme or 'defaults' object defined by ZingChart. More information available 
 
 The render type of the chart. **The default is `svg`** but you can also pass the string `canvas` to render the charts in canvas. 
 
+Note: All other properties that are added as a prop will be added to the render object. This allows for settings such as 'customprogresslogo' to be set. Any unrecognized properties will be ignored.
+
 ## Events
 All zingchart events are readily available on the component to listen to. For example, to listen for the 'complete' event when the chart is finished rendering:
 

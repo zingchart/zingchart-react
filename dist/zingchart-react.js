@@ -223,29 +223,6 @@ var METHOD_NAMES = [
   'zoomtovalues'
 ];
 
-var MARKER_NAMES = [
-  'square',
-  'parallelogram',
-  'trapezoid',
-  'circle',
-  'diamond',
-  'triangle',
-  'ellipse',
-  'star5',
-  'star6',
-  'star7',
-  'star8',
-  'rpoly5',
-  'rpoly6',
-  'rpoly7',
-  'rpoly8',
-  'gear5',
-  'gear6',
-  'gear7',
-  'gear8',
-  'pie',
-];
-
 var MISC = {
   DEFAULT_WIDTH: '100%',
   DEFAULT_HEIGHT: 480,
@@ -256,7 +233,6 @@ const {DEFAULT_WIDTH, DEFAULT_HEIGHT} = MISC;
 var constants = {
   EVENT_NAMES,
   METHOD_NAMES,
-  MARKER_NAMES,
   DEFAULT_WIDTH,
   DEFAULT_HEIGHT
 };
@@ -333,7 +309,7 @@ var ZingChart = function (_Component) {
     var _this = possibleConstructorReturn(this, (ZingChart.__proto__ || Object.getPrototypeOf(ZingChart)).call(this, props));
 
     _this.id = _this.props.id || 'zingchart-react-' + window.ZCReact.count++;
-
+    console.log(props);
     // Bind all methods available to zingchart to be accessed via Refs.
     METHOD_NAMES$1.forEach(function (name) {
       _this[name] = function (args) {
@@ -411,13 +387,18 @@ var ZingChart = function (_Component) {
   }, {
     key: 'renderChart',
     value: function renderChart() {
-      var renderObject = {
-        id: this.id,
-        width: this.props.width || DEFAULT_WIDTH$1,
-        height: this.props.height || DEFAULT_HEIGHT$1,
-        data: this.props.data,
-        output: this.props.output || DEFAULT_OUTPUT
-      };
+      var _this3 = this;
+
+      var renderObject = {};
+      Object.keys(this.props).forEach(function (prop) {
+        renderObject[prop] = _this3.props[prop];
+      });
+      // Overwrite some existing props.
+      renderObject.id = this.id;
+      renderObject.width = this.props.width || DEFAULT_WIDTH$1;
+      renderObject.height = this.props.height || DEFAULT_HEIGHT$1;
+      renderObject.data = this.props.data;
+      renderObject.output = this.props.output || DEFAULT_OUTPUT;
 
       if (this.props.series) {
         renderObject.data.series = this.props.series;
