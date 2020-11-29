@@ -43,22 +43,20 @@ class ZingChart extends Component {
   }
 
   sanitizeSeries(series) {
-    const clean = (series || []).map((ser) => ({
+    return (series || []).map((ser) => ({
       ...(ser || {}),
       values: this.sanitizeStrings(((ser || {}).values || [])),
     }));
-    console.log({ clean })
-    return clean;
   }
 
   sanitize(data) {
     const { series } = data;
     const sanitized = this.sanitizeSeries(series);
-    const cleanData = {
+    const clean = {
       ...data,
       series: sanitized,
-    }
-    return cleanData;
+    };
+    return clean;
   }
 
   componentDidMount() {
