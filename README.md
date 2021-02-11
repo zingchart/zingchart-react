@@ -20,11 +20,15 @@ This guide assumes some basic working knowledge of React and jsx.
 
 ## 1. Install
 
+Install the `zingchart` package via npm
+
+`npm install zingchart`
+
 Install the `zingchart-react` package via npm
 
 `npm install zingchart-react`
 
-## 2. Include the `zinchart` package in your project
+## 2. Include the `zingchart` package in your project
 
 The `zingchart` package is a **DIRECT** dependency of `zingchart-react` but you can also update this package outside of this component. Meaning the wrapper is no longer tied to a ZingChart library version, but just the component itself.
 
@@ -32,17 +36,17 @@ You can import the library like so:
 
 ```javascript
 // import the es6 version
-import 'zingchart/es6';
+import 'zingchart/zingchart-es6';
 ```
 
 ## 3. Include the component in your project 
 
-You can either include the zingchart-react component to your project via UMD or modules (reccomended).
+You can either include the zingchart-react component to your project via UMD or modules (recommended).
 
 
-### Modules (reccomended)
+### Modules (recommended)
 ```js
-import 'zingchart/es6';
+import 'zingchart/zingchart-es6';
 import ZingChart from 'zingchart-react';
 ```
 
@@ -51,7 +55,7 @@ wrapped as a closure an eval statement so there is **NO** default
 export objects. Just import them.
 
 ```js
-import 'zingchart/es6';
+import 'zingchart/zingchart-es6';
 import ZingChart from 'zingchart-react';
 // EXPLICITLY IMPORT MODULE from node_modules
 import "zingchart/modules-es6/zingchart-maps.min.js";
@@ -70,10 +74,10 @@ In your main html file, include the package as a script include.
 
 If you need access to the `window.zingchart` objects for licensing or development flags or any top level 
 variables for other modules like `zingchart.loadGeoJSON()`. This is all exposed by importing the library as 
-the `zingchart` variable with `import zingchart from 'zingchart/es6'`.
+the `zingchart` variable with `import zingchart from 'zingchart/zingchart-es6'`.
 
 ```javascript
-import zingchart from 'zingchart/es6';
+import zingchart from 'zingchart/zingchart-es6';
 import ZingChart from 'zingchart-react';
 
 // zingchart object for performance flags
@@ -201,7 +205,7 @@ class App extends Component {
 }
 ```
 
-For a list of all the events that you can listen to, refer to the complete documentation on https://www.zingchart.com/docs/events
+For a list of all the events that you can listen to, refer to the complete documentation on https://www.zingchart.com/docs/api/events
 
 
 ### Methods
@@ -244,7 +248,7 @@ class App extends Component {
 
 ```
 
-For a list of all the methods that you can call and the parameters each method can take, refer to the complete documentation on https://www.zingchart.com/docs/methods
+For a list of all the methods that you can call and the parameters each method can take, refer to the complete documentation on https://www.zingchart.com/docs/api/methods
 
 ## Working Example
 
