@@ -36,7 +36,7 @@ You can import the library like so:
 
 ```javascript
 // import the es6 version
-import 'zingchart/zingchart-es6';
+import 'zingchart/es6';
 ```
 
 ## 3. Include the component in your project 
@@ -46,7 +46,7 @@ You can either include the zingchart-react component to your project via UMD or 
 
 ### Modules (recommended)
 ```js
-import 'zingchart/zingchart-es6';
+import 'zingchart/es6';
 import ZingChart from 'zingchart-react';
 ```
 
@@ -55,7 +55,7 @@ wrapped as a closure an eval statement so there is **NO** default
 export objects. Just import them.
 
 ```js
-import 'zingchart/zingchart-es6';
+import 'zingchart/es6';
 import ZingChart from 'zingchart-react';
 // EXPLICITLY IMPORT MODULE from node_modules
 import "zingchart/modules-es6/zingchart-maps.min.js";
@@ -74,10 +74,10 @@ In your main html file, include the package as a script include.
 
 If you need access to the `window.zingchart` objects for licensing or development flags or any top level 
 variables for other modules like `zingchart.loadGeoJSON()`. This is all exposed by importing the library as 
-the `zingchart` variable with `import zingchart from 'zingchart/zingchart-es6'`.
+the `zingchart` variable with `import zingchart from 'zingchart/es6'`.
 
 ```javascript
-import zingchart from 'zingchart/zingchart-es6';
+import zingchart from 'zingchart/es6';
 import ZingChart from 'zingchart-react';
 
 // zingchart object for performance flags
