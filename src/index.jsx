@@ -101,6 +101,9 @@ class ZingChart extends Component {
     if (this.props.theme) {
       renderObject.defaults = this.props.theme;
     }
+    if (this.props.modules) {
+      renderObject.modules = this.props.modules;
+    }
     zingchart.render(renderObject);
   }
 

@@ -11,7 +11,8 @@ import Dynamic from './Dynamic.jsx';
 import Events from './Events.jsx';
 import Methods from './Methods.jsx';
 import Simple from './Simple.jsx';
-import ModuleChart from './ModuleChart.jsx';
+import ModuleDrag from './ModuleDrag.jsx';
+import ModuleMap from './ModuleMap.jsx';
 import License from './License.jsx';
 import './App.css';
 
@@ -26,7 +27,8 @@ function App() {
         <h1>zingchart-react playground</h1>
         <p>A simple example of binding data, mutations with methods, and listening to events</p>
           <Link to="/" className="button">Simple</Link>
-          <Link to="/module-chart" className="button">Module Chart</Link>
+          <Link to="/module-drag" className="button">Module Drag</Link>
+          <Link to="/module-map" className="button">Module Map</Link>
           <Link to="/dynamic" className="button">Dynamic</Link>
           <Link to="/events" className="button">Events</Link>
           <Link to="/methods" className="button">Methods</Link>
@@ -39,8 +41,11 @@ function App() {
         <Route path="/dynamic">
           <Dynamic />
         </Route>
-        <Route path="/module-chart">
-          <ModuleChart />
+        <Route path="/module-drag">
+          <ModuleDrag />
+        </Route>
+        <Route path="/module-map">
+          <ModuleMap />
         </Route>
         <Route path="/events">
           <Events />

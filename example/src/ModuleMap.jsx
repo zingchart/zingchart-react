@@ -6,7 +6,7 @@ import ZingChart from 'zingchart-react';
 import 'zingchart/modules-es6/zingchart-maps.min.js';
 import 'zingchart/modules-es6/zingchart-maps-usa.min.js';
 
-class ModuleChart extends Component {
+class ModuleMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,4 +36,4 @@ class ModuleChart extends Component {
 
 }
 
-export default ModuleChart;
+export default ModuleMap;
