@@ -169,6 +169,9 @@ The height of the chart. **Defaults to 480px**.
 
 The theme or 'defaults' object defined by ZingChart. More information available here: https://www.zingchart.com/docs/api/themes
 
+### modules [string] (optional)
+The modules object to load additional modules. More information available here: https://www.zingchart.com/docs/api/zingchart-modules#modules-list
+
 ### `output` [string] (optional)
 
 The render type of the chart. **The default is `svg`** but you can also pass the string `canvas` to render the charts in canvas. 

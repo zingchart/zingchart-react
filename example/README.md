@@ -105,6 +105,9 @@ The height of the chart. Defaults to 480px.
 ### theme [object] (optional)
 The theme or 'defaults' object defined by ZingChart. More information available here: https://www.zingchart.com/docs/api/themes
 
+### modules [string] (optional)
+The modules object to load additional modules. More information available here: https://www.zingchart.com/docs/api/zingchart-modules#modules-list
+
 ## Events
 All zingchart events are readily available on the component to listen to. For example, to listen for the 'complete' event when the chart is finished rendering:
 
