@@ -92,9 +92,15 @@ zingchart.LICENSE = ['abcdefghijklmnopqrstuvwxy'];
 
 Use the newly imported `ZingChart` component in your markup.
 
+### Using class components:
 
 ```jsx
-class App extends Component {
+import React, {Component} from 'react';
+import zingchart from 'zingchart/es6';
+import ZingChart from 'zingchart-react';
+/* Additional imports and settings as needed, see above */
+
+class Simple extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -113,10 +119,32 @@ class App extends Component {
       </div>
     );
   }
-
 }
+
+export default Simple;
 ```
 
+### Using function components:
+
+```jsx
+import React, {useState} from 'react';
+import 'zingchart/es6';
+import ZingChart from 'zingchart-react';
+/* Additional imports and settings as needed, see above */
+
+function Simple() {
+  const [config] = useState({
+    type: 'bar',
+    series: [{
+      values: [4,5,3,4,5,3,5,4,11]
+    }]
+  })
+
+	return <ZingChart data={config} />
+}
+
+export default Simple;
+```
 
 ## Parameters
 
