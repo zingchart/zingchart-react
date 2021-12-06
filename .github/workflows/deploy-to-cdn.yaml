@@ -44,14 +44,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.15]
+        node-version: [14.15.1]
 
     steps:
       - name: Checkout CDN Repository
         uses: actions/checkout@v2
         with:
           repository: zingsoftinc/zingchart-cdn
-          ref: refs/heads/dev
+          ref: refs/heads/master
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - name: Download Build Artifacts
         uses: actions/download-artifact@v1
