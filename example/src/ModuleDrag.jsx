@@ -65,15 +65,25 @@ class ModuleDrag extends Component {
       }
     }
     this.chart = React.createRef();
+    this.log = this.log.bind(this);
   }
-  render() {
 
+  log(result) {
+    console.log('event: ', result);
+    console.log('drag value: ', result['zingchart.plugins.dragging.update.value'])
+  }
+
+  render() {
     return (
       <div >
-        <ZingChart ref={this.chart} data={this.state.config} height='600px' modules='dragging' />
+        <ZingChart
+          ref={this.chart}
+          data={this.state.config}
+          height='600px'
+          modules='dragging'
+          zingchart_plugins_dragging_complete={this.log}/>
       </div>
     );
-
   }
 
 }

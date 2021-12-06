@@ -35,15 +35,26 @@ class ZingChart extends Component {
     );
   }
 
+  bindEvent(eventName, originalEventName) {
+    if (EVENT_NAMES.includes(eventName)) {
+      // Filter through the provided events list, then register it to zingchart.
+      window.zingchart.bind(this.id, eventName, result => {
+        this.props[originalEventName || eventName](result);
+      });
+      return true;
+    } else {
+      return false;
+    };
+  }
+
   componentDidMount() {
     // Bind all events registered.
     Object.keys(this.props).forEach(eventName => {
-      if (EVENT_NAMES.includes(eventName)) {
-        // Filter through the provided events list, then register it to zingchart.
-        window.zingchart.bind(this.id, eventName, result => {
-          this.props[eventName](result);
-        });
-      }
+      if (!this.bindEvent(eventName)) {
+        // Replace '_' with '.' and attempt again
+        let newEventName = eventName.replace(/\_/g, '.');
+        this.bindEvent(newEventName, eventName);
+      };
     });
 
     this.renderChart();
