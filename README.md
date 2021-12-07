@@ -283,9 +283,4 @@ For a list of all the methods that you can call and the parameters each method c
 
 ## Working Example
 
-This repository contains a "Create React App" example to give you an easy way to see the component in action. 
-
-To start the sample application:
-```
-cd example && npm run start 
-```
+See https://github.com/zingchart-demos/zingchart-react-demo for a demo based on "Create React App" that shows this component in action.

@@ -389,19 +389,31 @@ var ZingChart = function (_Component) {
       return React__default.createElement('div', { id: this.id, style: this.state.style });
     }
   }, {
+    key: 'bindEvent',
+    value: function bindEvent(eventName, originalEventName) {
+      var _this2 = this;
+
+      if (EVENT_NAMES$1.includes(eventName)) {
+        // Filter through the provided events list, then register it to zingchart.
+        window.zingchart.bind(this.id, eventName, function (result) {
+          _this2.props[originalEventName || eventName](result);
+        });
+        return true;
+      } else {
+        return false;
+      }    }
+  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _this2 = this;
+      var _this3 = this;
 
       // Bind all events registered.
       Object.keys(this.props).forEach(function (eventName) {
-        if (EVENT_NAMES$1.includes(eventName)) {
-          // Filter through the provided events list, then register it to zingchart.
-          window.zingchart.bind(_this2.id, eventName, function (result) {
-            _this2.props[eventName](result);
-          });
-        }
-      });
+        if (!_this3.bindEvent(eventName)) {
+          // Replace '_' with '.' and attempt again
+          var newEventName = eventName.replace(/\_/g, '.');
+          _this3.bindEvent(newEventName, eventName);
+        }      });
 
       this.renderChart();
     }
@@ -445,11 +457,11 @@ var ZingChart = function (_Component) {
   }, {
     key: 'renderChart',
     value: function renderChart() {
-      var _this3 = this;
+      var _this4 = this;
 
       var renderObject = {};
       Object.keys(this.props).forEach(function (prop) {
-        renderObject[prop] = _this3.props[prop];
+        renderObject[prop] = _this4.props[prop];
       });
       // Overwrite some existing props.
       renderObject.id = this.id;
