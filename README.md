@@ -9,7 +9,7 @@
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-[![](https://github.com/zingchart/zingchart-react/blob/main/zingchart-demo.gif?raw=true)](https://codesandbox.io/s/zingchart-react-wrapper-example-dxfc9)
+[![](https://github.com/zingchart/zingchart-react/blob/master/zingchart-demo.gif?raw=true)](https://codesandbox.io/s/zingchart-react-wrapper-example-dxfc9)
 
 ## Quickstart Guide
 
