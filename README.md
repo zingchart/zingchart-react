@@ -9,7 +9,7 @@
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-[![](https://d2ddoduugvun08.cloudfront.net/items/1L0T1l1e0v2t150Q3e1y/Screen%20Recording%202020-06-04%20at%2011.47%20PM.gif?X-CloudApp-Visitor-Id=3179966)](https://codesandbox.io/s/zingchart-react-wrapper-example-dxfc9)
+[![](https://github.com/zingchart/zingchart-react/blob/main/zingchart-demo.gif?raw=true)](https://codesandbox.io/s/zingchart-react-wrapper-example-dxfc9)
 
 ## Quickstart Guide
 
