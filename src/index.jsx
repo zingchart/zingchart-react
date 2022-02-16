@@ -15,7 +15,7 @@ class ZingChart extends Component {
   constructor(props) {
     super(props);
     this.id = this.props.id || 'zingchart-react-' + window.ZCReact.count++;
-    console.log(props);
+
     // Bind all methods available to zingchart to be accessed via Refs.
     METHOD_NAMES.forEach(name => {
       this[name] = args => {
