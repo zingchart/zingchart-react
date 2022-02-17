@@ -10,8 +10,8 @@
   "jsnext:main": "dist/zingchart-react.es.js",
   "homepage": "https://www.zingchart.com/",
   "engines": {
-    "node": ">=17.5",
-    "npm": ">=7"
+    "node": ">=14",
+    "npm": ">=5"
   },
   "keywords": [
     "dashboard",
