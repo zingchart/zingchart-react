@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import zingchart from 'zingchart';
 import constants from 'zingchart-constants';
 
 const { DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_OUTPUT, EVENT_NAMES, METHOD_NAMES } = constants;
@@ -29,6 +30,7 @@ class ZingChart extends Component {
       }
     };
   }
+
   render() {
     return (
       <div id={this.id} style={this.state.style}></div>
@@ -124,4 +126,4 @@ class ZingChart extends Component {
 }
 
 // export ZingChart react class as the default
-export {ZingChart as default};
+export default ZingChart;
