@@ -5,8 +5,8 @@
   "author": "ZingSoft Inc.",
   "license": "MIT",
   "repository": "zingchart/zingchart-react",
-  "main": "dist/zingchart-react.js",
-  "module": "dist/zingchart-react.es.js",
+  "main": "dist/zingchart-react.cjs.js",
+  "module": "dist/zingchart-react.esm.js",
   "jsnext:main": "dist/zingchart-react.es.js",
   "homepage": "https://www.zingchart.com/",
   "engines": {
