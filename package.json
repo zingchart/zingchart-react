@@ -4,7 +4,10 @@
   "description": "ZingChart React Component wrapper to allow native react syntax for javascript charts, chart events, chart methods and chart styling.",
   "author": "ZingSoft Inc.",
   "license": "MIT",
-  "repository": "zingchart/zingchart-react",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zingchart/zingchart-react.git"
+  },
   "main": "dist/zingchart-react.cjs.js",
   "module": "dist/zingchart-react.esm.js",
   "jsnext:main": "dist/zingchart-react.es.js",
