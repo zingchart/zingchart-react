@@ -6,111 +6,6 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor);
-  }
-}
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  Object.defineProperty(Constructor, "prototype", {
-    writable: false
-  });
-  return Constructor;
-}
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
-    }
-  });
-  Object.defineProperty(subClass, "prototype", {
-    writable: false
-  });
-  if (superClass) _setPrototypeOf(subClass, superClass);
-}
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-  return _setPrototypeOf(o, p);
-}
-function _isNativeReflectConstruct() {
-  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-  if (Reflect.construct.sham) return false;
-  if (typeof Proxy === "function") return true;
-  try {
-    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-    return true;
-  } catch (e) {
-    return false;
-  }
-}
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-  return self;
-}
-function _possibleConstructorReturn(self, call) {
-  if (call && (typeof call === "object" || typeof call === "function")) {
-    return call;
-  } else if (call !== void 0) {
-    throw new TypeError("Derived constructors may only return object or undefined");
-  }
-  return _assertThisInitialized(self);
-}
-function _createSuper(Derived) {
-  var hasNativeReflectConstruct = _isNativeReflectConstruct();
-  return function _createSuperInternal() {
-    var Super = _getPrototypeOf(Derived),
-      result;
-    if (hasNativeReflectConstruct) {
-      var NewTarget = _getPrototypeOf(this).constructor;
-      result = Reflect.construct(Super, arguments, NewTarget);
-    } else {
-      result = Super.apply(this, arguments);
-    }
-    return _possibleConstructorReturn(this, result);
-  };
-}
-function _toPrimitive(input, hint) {
-  if (typeof input !== "object" || input === null) return input;
-  var prim = input[Symbol.toPrimitive];
-  if (prim !== undefined) {
-    var res = prim.call(input, hint || "default");
-    if (typeof res !== "object") return res;
-    throw new TypeError("@@toPrimitive must return a primitive value.");
-  }
-  return (hint === "string" ? String : Number)(input);
-}
-function _toPropertyKey(arg) {
-  var key = _toPrimitive(arg, "string");
-  return typeof key === "symbol" ? key : String(key);
-}
-
 /*
 All of the code within the ZingChart software is developed and copyrighted by ZingChart, Inc., and may not be copied,
 replicated, or used in any other software or application without prior permission from ZingChart. All usage must coincide with the
@@ -413,11 +308,13 @@ var constants = {
   DEFAULT_OUTPUT: DEFAULT_OUTPUT$1,
 };
 
-var DEFAULT_WIDTH = constants.DEFAULT_WIDTH,
-  DEFAULT_HEIGHT = constants.DEFAULT_HEIGHT,
-  DEFAULT_OUTPUT = constants.DEFAULT_OUTPUT,
-  EVENT_NAMES = constants.EVENT_NAMES,
-  METHOD_NAMES = constants.METHOD_NAMES;
+const {
+  DEFAULT_WIDTH,
+  DEFAULT_HEIGHT,
+  DEFAULT_OUTPUT,
+  EVENT_NAMES,
+  METHOD_NAMES
+} = constants;
 
 // One time setup globally to handle all zingchart-react objects in the app space.
 if (!window.ZCReact) {
@@ -426,133 +323,111 @@ if (!window.ZCReact) {
     count: 0
   };
 }
-var ZingChart = /*#__PURE__*/function (_Component) {
-  _inherits(ZingChart, _Component);
-  var _super = _createSuper(ZingChart);
-  function ZingChart(props) {
-    var _this;
-    _classCallCheck(this, ZingChart);
-    _this = _super.call(this, props);
-    _this.id = _this.props.id || 'zingchart-react-' + window.ZCReact.count++;
+class ZingChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.id = this.props.id || "zingchart-react-" + window.ZCReact.count++;
 
     // Bind all methods available to zingchart to be accessed via Refs.
-    METHOD_NAMES.forEach(function (name) {
-      _this[name] = function (args) {
-        return window.zingchart.exec(_this.id, name, args);
+    METHOD_NAMES.forEach(name => {
+      this[name] = args => {
+        return window.zingchart.exec(this.id, name, args);
       };
     });
-    _this.state = {
+    this.state = {
       style: {
-        height: _this.props.height || DEFAULT_HEIGHT,
-        width: _this.props.width || DEFAULT_WIDTH
+        height: this.props.height || DEFAULT_HEIGHT,
+        width: this.props.width || DEFAULT_WIDTH
       }
     };
-    return _this;
   }
-  _createClass(ZingChart, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/React__default["default"].createElement("div", {
-        id: this.id,
-        style: this.state.style
+  render() {
+    return /*#__PURE__*/React__default["default"].createElement("div", {
+      id: this.id,
+      style: this.state.style
+    });
+  }
+  bindEvent(eventName, originalEventName) {
+    if (EVENT_NAMES.includes(eventName)) {
+      // Filter through the provided events list, then register it to zingchart.
+      window.zingchart.bind(this.id, eventName, result => {
+        this.props[originalEventName || eventName](result);
       });
-    }
-  }, {
-    key: "bindEvent",
-    value: function bindEvent(eventName, originalEventName) {
-      var _this2 = this;
-      if (EVENT_NAMES.includes(eventName)) {
-        // Filter through the provided events list, then register it to zingchart.
-        window.zingchart.bind(this.id, eventName, function (result) {
-          _this2.props[originalEventName || eventName](result);
-        });
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this3 = this;
-      // Bind all events registered.
-      Object.keys(this.props).forEach(function (eventName) {
-        if (!_this3.bindEvent(eventName)) {
-          // Replace '_' with '.' and attempt again
-          var newEventName = eventName.replace(/\_/g, '.');
-          _this3.bindEvent(newEventName, eventName);
-        }
-      });
-      this.renderChart();
-    }
-
-    // Used to check the values being passed in to avoid unnecessary changes.
-  }, {
-    key: "shouldComponentUpdate",
-    value: function shouldComponentUpdate(nextProps) {
-      // Data change
-      if (JSON.stringify(nextProps.data) !== JSON.stringify(this.props.data)) {
-        zingchart$1.exec(this.id, 'setdata', {
-          data: nextProps.data
-        });
-
-        // Series change
-      } else if (JSON.stringify(nextProps.series) !== JSON.stringify(this.props.series)) {
-        zingchart$1.exec(this.id, 'setseriesdata', {
-          graphid: 0,
-          plotindex: 0,
-          data: nextProps.series
-        });
-
-        // Resize
-      } else if (nextProps.width !== this.props.width || nextProps.height !== this.props.height) {
-        this.setState({
-          style: {
-            width: nextProps.width || DEFAULT_WIDTH,
-            height: nextProps.height || DEFAULT_HEIGHT
-          }
-        });
-        zingchart$1.exec(this.id, 'resize', {
-          width: nextProps.width || DEFAULT_WIDTH,
-          height: nextProps.height || DEFAULT_HEIGHT
-        });
-      }
-
-      // React should never re-render since ZingChart controls this component.
+      return true;
+    } else {
       return false;
     }
-  }, {
-    key: "renderChart",
-    value: function renderChart() {
-      var _this4 = this;
-      var renderObject = {};
-      Object.keys(this.props).forEach(function (prop) {
-        renderObject[prop] = _this4.props[prop];
+  }
+  componentDidMount() {
+    // Bind all events registered.
+    Object.keys(this.props).forEach(eventName => {
+      if (!this.bindEvent(eventName)) {
+        // Replace '_' with '.' and attempt again
+        let newEventName = eventName.replace(/\_/g, ".");
+        this.bindEvent(newEventName, eventName);
+      }
+    });
+    this.renderChart();
+  }
+
+  // Used to check the values being passed in to avoid unnecessary changes.
+  shouldComponentUpdate(nextProps) {
+    // Data change
+    if (JSON.stringify(nextProps.data) !== JSON.stringify(this.props.data)) {
+      zingchart$1.exec(this.id, "setdata", {
+        data: nextProps.data
       });
-      // Overwrite some existing props.
-      renderObject.id = this.id;
-      renderObject.width = this.props.width || DEFAULT_WIDTH;
-      renderObject.height = this.props.height || DEFAULT_HEIGHT;
-      renderObject.data = this.props.data;
-      renderObject.output = this.props.output || DEFAULT_OUTPUT;
-      if (this.props.series) {
-        renderObject.data.series = this.props.series;
-      }
-      if (this.props.theme) {
-        renderObject.defaults = this.props.theme;
-      }
-      if (this.props.modules) {
-        renderObject.modules = this.props.modules;
-      }
-      zingchart$1.render(renderObject);
+
+      // Series change
+    } else if (JSON.stringify(nextProps.series) !== JSON.stringify(this.props.series)) {
+      zingchart$1.exec(this.id, "setseriesdata", {
+        graphid: 0,
+        plotindex: 0,
+        data: nextProps.series
+      });
+
+      // Resize
+    } else if (nextProps.width !== this.props.width || nextProps.height !== this.props.height) {
+      this.setState({
+        style: {
+          width: nextProps.width || DEFAULT_WIDTH,
+          height: nextProps.height || DEFAULT_HEIGHT
+        }
+      });
+      zingchart$1.exec(this.id, "resize", {
+        width: nextProps.width || DEFAULT_WIDTH,
+        height: nextProps.height || DEFAULT_HEIGHT
+      });
     }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      zingchart$1.exec(this.id, 'destroy');
+
+    // React should never re-render since ZingChart controls this component.
+    return false;
+  }
+  renderChart() {
+    const renderObject = {};
+    Object.keys(this.props).forEach(prop => {
+      renderObject[prop] = this.props[prop];
+    });
+    // Overwrite some existing props.
+    renderObject.id = this.id;
+    renderObject.width = this.props.width || DEFAULT_WIDTH;
+    renderObject.height = this.props.height || DEFAULT_HEIGHT;
+    renderObject.data = this.props.data;
+    renderObject.output = this.props.output || DEFAULT_OUTPUT;
+    if (this.props.series) {
+      renderObject.data.series = this.props.series;
     }
-  }]);
-  return ZingChart;
-}(React.Component); // export ZingChart react class as the default
+    if (this.props.theme) {
+      renderObject.defaults = this.props.theme;
+    }
+    if (this.props.modules) {
+      renderObject.modules = this.props.modules;
+    }
+    zingchart$1.render(renderObject);
+  }
+  componentWillUnmount() {
+    zingchart$1.exec(this.id, "destroy");
+  }
+}
 
 module.exports = ZingChart;

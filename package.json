@@ -25,19 +25,27 @@
     "react"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "commit": "git-cz",
-    "start": "rollup -c -w",
     "prepare": "npm run build",
+    "build": "rollup -c",
+    "build:watch": "rollup -c -W",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "commit": "git-cz",
     "test:unit": "mocha --config=./.configs/.mocharc.js"
   },
   "peerDependencies": {
     "react": ">=15.0.0",
     "react-dom": ">=15.0.0"
   },
+  "dependencies": {
+    "zingchart": "latest",
+    "zingchart-constants": "github:zingchart/zingchart-constants#master"
+  },
   "devDependencies": {
     "@babel/cli": "^7.23.4",
     "@babel/core": "^7.23.5",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-react": "^7.23.3",
     "@rollup/plugin-commonjs": "^25.0.7",
@@ -50,16 +58,27 @@
     "mocha": "^10.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "react-scripts": "^5.0.1",
     "rollup": "^2.79.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2"
+    "rollup-plugin-postcss": "^4.0.2",
+    "web-vitals": "^3.5.0"
   },
   "files": [
-    "dist"
+    "dist/*"
   ],
-  "dependencies": {
-    "zingchart": "latest",
-    "zingchart-constants": "github:zingchart/zingchart-constants#master"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

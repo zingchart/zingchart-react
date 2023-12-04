@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #c3c3c5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 120%;
+  color: #fff;
+}
+
+.App-buttonbar {
+  display: flex;
+  flex-direction: row;
+}
+
+[class*="App-button-"] {
+  background-color: #4caf50;
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-right: 1em;
+}
+
+.App-button-plain:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.App-button-active {
+  color: #000;
+}
+
+.App-source-button {
+  background-color: #1a456d;
+  border: none;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.App-demo-titlebar {
+  background-color: #c3c3c5;
+  padding: 15px 32px;
+}
+
+.App-demo-titlebar h3 {
+  color: #484848;
+}
