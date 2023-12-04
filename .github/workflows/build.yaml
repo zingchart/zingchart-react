@@ -3,7 +3,7 @@
 name: Build
 
 # Run on a dev branch
-on: 
+on:
   push:
     branches:
       - master
@@ -29,11 +29,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       # npm ci REQUIRES a package-lock.json file
       - name: Install Fresh Dependencies
-        run: |
-          rm package-lock.json
-          npm install
+        run: npm ci
       - name: Build library
         run: npm run build
       - name: Log build output
-        run: |
-          ls -alt dist/
+        run: ls -alt dist/
