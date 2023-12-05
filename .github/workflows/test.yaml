@@ -27,7 +27,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      # npm ci REQUIRES a package-lock.json file
       - name: Install Fresh Dependencies
         run: npm ci
       - name: Build library

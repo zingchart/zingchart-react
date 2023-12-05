@@ -1,12 +1,13 @@
-
-# See https://help.github.com/ignore-files/ for more about ignoring files.
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-node_modules
+/node_modules
 
-# all builds
-build
-.rpt2_cache
+# production
+/build
+
+# output files
+/dist
 
 # misc
 .DS_Store
@@ -20,16 +21,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-## dist output files
-dist/zingchart-react.es.js
-dist/zingchart-react.es.js.map
-
-## Unignored Files
-!dist/modules/**
-!dist/zingchart-react.js
-
-# Example files
-example/package-lock.json
-
-# Outher output files
+# Other generated files
 CHANGELOG.md
