@@ -1,60 +1,66 @@
-import React, { Component } from 'react';
-import constants from 'zingchart-constants';
+import React, { Component } from "react";
+import zingchart from "zingchart";
+import constants from "zingchart-constants";
 
-const { DEFAULT_WIDTH, DEFAULT_HEIGHT, DEFAULT_OUTPUT, EVENT_NAMES, METHOD_NAMES } = constants;
+const {
+  DEFAULT_WIDTH,
+  DEFAULT_HEIGHT,
+  DEFAULT_OUTPUT,
+  EVENT_NAMES,
+  METHOD_NAMES,
+} = constants;
 
 // One time setup globally to handle all zingchart-react objects in the app space.
 if (!window.ZCReact) {
   window.ZCReact = {
     instances: {},
-    count: 0
+    count: 0,
   };
 }
 
 class ZingChart extends Component {
   constructor(props) {
     super(props);
-    this.id = this.props.id || 'zingchart-react-' + window.ZCReact.count++;
+    this.id = this.props.id || "zingchart-react-" + window.ZCReact.count++;
 
     // Bind all methods available to zingchart to be accessed via Refs.
-    METHOD_NAMES.forEach(name => {
-      this[name] = args => {
+    METHOD_NAMES.forEach((name) => {
+      this[name] = (args) => {
         return window.zingchart.exec(this.id, name, args);
       };
     });
     this.state = {
-      style : {
+      style: {
         height: this.props.height || DEFAULT_HEIGHT,
         width: this.props.width || DEFAULT_WIDTH,
-      }
+      },
     };
   }
+
   render() {
-    return (
-      <div id={this.id} style={this.state.style}></div>
-    );
+    return <div id={this.id} style={this.state.style}></div>;
   }
 
   bindEvent(eventName, originalEventName) {
     if (EVENT_NAMES.includes(eventName)) {
       // Filter through the provided events list, then register it to zingchart.
-      window.zingchart.bind(this.id, eventName, result => {
+      window.zingchart.bind(this.id, eventName, (result) => {
         this.props[originalEventName || eventName](result);
       });
       return true;
     } else {
       return false;
-    };
+    }
   }
 
   componentDidMount() {
     // Bind all events registered.
-    Object.keys(this.props).forEach(eventName => {
+    Object.keys(this.props).forEach((eventName) => {
       if (!this.bindEvent(eventName)) {
         // Replace '_' with '.' and attempt again
-        let newEventName = eventName.replace(/\_/g, '.');
+        let newEventName = eventName.replace(/\_/g, ".");
         this.bindEvent(newEventName, eventName);
-      };
+      }
     });
 
     this.renderChart();
@@ -64,31 +70,36 @@ class ZingChart extends Component {
   shouldComponentUpdate(nextProps) {
     // Data change
     if (JSON.stringify(nextProps.data) !== JSON.stringify(this.props.data)) {
-      zingchart.exec(this.id, 'setdata', {
+      zingchart.exec(this.id, "setdata", {
         data: nextProps.data,
       });
 
       // Series change
-    } else if (JSON.stringify(nextProps.series) !== JSON.stringify(this.props.series)) {
-      zingchart.exec(this.id, 'setseriesdata', {
+    } else if (
+      JSON.stringify(nextProps.series) !== JSON.stringify(this.props.series)
+    ) {
+      zingchart.exec(this.id, "setseriesdata", {
         graphid: 0,
         plotindex: 0,
-        data: nextProps.series
+        data: nextProps.series,
       });
 
       // Resize
-    } else if (nextProps.width !== this.props.width || nextProps.height !== this.props.height) {
+    } else if (
+      nextProps.width !== this.props.width ||
+      nextProps.height !== this.props.height
+    ) {
       this.setState({
         style: {
           width: nextProps.width || DEFAULT_WIDTH,
           height: nextProps.height || DEFAULT_HEIGHT,
         },
       });
-      zingchart.exec(this.id, 'resize', {
+      zingchart.exec(this.id, "resize", {
         width: nextProps.width || DEFAULT_WIDTH,
         height: nextProps.height || DEFAULT_HEIGHT,
       });
-    } 
+    }
 
     // React should never re-render since ZingChart controls this component.
     return false;
@@ -96,9 +107,9 @@ class ZingChart extends Component {
 
   renderChart() {
     const renderObject = {};
-    Object.keys(this.props).forEach(prop => {
+    Object.keys(this.props).forEach((prop) => {
       renderObject[prop] = this.props[prop];
-    })
+    });
     // Overwrite some existing props.
     renderObject.id = this.id;
     renderObject.width = this.props.width || DEFAULT_WIDTH;
@@ -119,9 +130,9 @@ class ZingChart extends Component {
   }
 
   componentWillUnmount() {
-    zingchart.exec(this.id, 'destroy');
+    zingchart.exec(this.id, "destroy");
   }
 }
 
 // export ZingChart react class as the default
-export {ZingChart as default};
+export default ZingChart;
