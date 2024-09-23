@@ -39,7 +39,7 @@
     "react-dom": ">=15.0.0"
   },
   "dependencies": {
-    "zingchart": "latest",
+    "zingchart": "2.x.x",
     "zingchart-constants": "github:zingchart/zingchart-constants#master"
   },
   "devDependencies": {
